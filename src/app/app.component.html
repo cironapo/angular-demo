@@ -1,13 +1,16 @@
 <app-top></app-top>
 <main role="main">
   <div class="container">
-      <ng-container *ngIf="!selected">
+      <ng-container *ngIf="!productSelected; else detail">
           <app-product-row *ngFor="let item of products"
-            (onClick)="selected=$event"
+            (onClick)="productSelected=$event"
             [product]="item">
           </app-product-row>
       </ng-container>
-      <app-product-detail *ngIf="selected" (onBack)="selected=undefined" [product]="selected"></app-product-detail>
+      <ng-template #detail>
+        <app-product-detail (onBack)="productSelected=undefined" [product]="productSelected"></app-product-detail>
+      </ng-template>
+
   </div>
 </main>
 <app-footer></app-footer>

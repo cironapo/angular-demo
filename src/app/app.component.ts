@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Product } from './catalog/models/product';
 
 @Component({
@@ -10,11 +11,12 @@ import { Product } from './catalog/models/product';
 export class AppComponent {
   title = 'project';
   products: Product[] = [];
-  selected: Product|undefined;
+  productSelected: Product|undefined;
   constructor(
     private http: HttpClient
   ){
-      this.http.get<Product[]>("http://localhost:3000/products").subscribe((products)=>{
+      this.http.get<Product[]>(
+        `${environment.apiEndpoint}/products`).subscribe((products)=>{
         this.products = products;
       })
   }

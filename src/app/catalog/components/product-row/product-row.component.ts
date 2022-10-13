@@ -15,7 +15,7 @@ export class ProductRowComponent implements OnInit {
   }
 
 
-  click(): void{
+  goDetail(): void{
     this.onClick.emit(this.product);
   }
 
