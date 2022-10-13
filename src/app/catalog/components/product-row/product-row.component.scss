@@ -1,0 +1,19 @@
+:host{
+  width: 100%;
+
+  .row{
+    border: 1px solid black;
+    .col-md-12{
+      padding: 10px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      img{
+        max-width: 150px;
+      }
+    }
+  }
+
+}
+

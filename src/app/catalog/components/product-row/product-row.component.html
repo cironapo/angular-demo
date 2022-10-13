@@ -1,0 +1,7 @@
+<div class="row" *ngIf="product">
+  <div class="col-md-12">
+      <img [src]="product.image">
+      <p>{{product.name}}</p>
+      <button class="btn btn-info" (click)="click()">vai alla scheda</button>
+  </div>
+</div>
