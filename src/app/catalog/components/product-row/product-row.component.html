@@ -1,7 +1,8 @@
-<div class="row" *ngIf="product">
+<div class="row" *ngIf="product" [ngClass]="promo?'promo':''">
   <div class="col-md-12">
       <img [src]="product.image">
       <p>{{product.name}}</p>
+      <p *ngIf="promoText" class="promo-text">{{promoText}}</p>
       <button class="btn btn-info" (click)="goDetail()">vai alla scheda</button>
   </div>
 </div>

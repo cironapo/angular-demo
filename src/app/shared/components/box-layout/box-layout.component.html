@@ -1,0 +1,11 @@
+<div class="box" [style.background]="background?background:'#666666'">
+    <div>
+      <ng-content select="[title]"></ng-content>
+      <br>
+      <ng-content select="[subtitle]"></ng-content>
+    </div>
+    <div>
+      <ng-content select="[content]"></ng-content>
+    </div>
+
+</div>

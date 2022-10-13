@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CatalogModule } from './catalog/catalog.module';
 import { SharedModule } from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent

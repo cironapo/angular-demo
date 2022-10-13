@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ServizioService } from 'src/app/services/servizio.service';
 import { Product } from '../../models/product';
 
 @Component({
@@ -9,13 +10,17 @@ import { Product } from '../../models/product';
 export class ProductDetailComponent implements OnInit {
   @Input() product: Product | undefined;
   @Output() onBack: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  constructor(
+    private _servizioService: ServizioService
+  ) { }
 
   ngOnInit(): void {
+    console.log(this._servizioService.name);
   }
 
 
   back(): void{
+      this._servizioService.name = 'Pluto';
       this.onBack.emit();
   }
 

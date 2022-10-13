@@ -3,6 +3,9 @@
 
   .row{
     border: 1px solid black;
+    &.promo{
+      border: 3px solid orange;
+    }
     .col-md-12{
       padding: 10px;
       display: flex;
@@ -13,6 +16,10 @@
         max-width: 150px;
       }
     }
+  }
+
+  .promo-text{
+    background-color: orange;
   }
 
 }
