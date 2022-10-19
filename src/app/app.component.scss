@@ -1,21 +1,3 @@
-.container{
-  margin-top: 10px;
-  .box-select{
-    background-color: rgb(200, 193, 193);
-    padding: 20px;
-  }
-  .products{
-    padding-top: 10px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-    app-product-row{
-      margin-bottom: 10px;
-    }
-  }
-
-}
 
 

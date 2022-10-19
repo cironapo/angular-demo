@@ -2,19 +2,31 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CatalogModule } from './catalog/catalog.module';
 import { SharedModule } from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
+import {RouterModule, Routes } from '@angular/router';
+import { CiaoComponent } from './components/ciao/ciao.component';
 
+const rotte: Routes = [
+  {
+    path: 'products',
+    loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule)
+  },
+  {
+    path: 'ciao',
+    component: CiaoComponent
+  }
+]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CiaoComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
-    CatalogModule,
-    HttpClientModule
+    RouterModule.forRoot(rotte),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

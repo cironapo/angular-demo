@@ -1,0 +1,30 @@
+<div class="container">
+  <ng-container *ngIf="!productSelected; else detail">
+    <div class="row">
+      <div class="col-md-12 box-select">
+        <label>Seleziona il prodotto da rendere "PROMO"</label>
+        <select class="form-control" #promoSelect (change)="changePromoProduct(promoSelect.value)">
+          <option>seleziona..</option>
+          <option *ngFor="let product of servizioService.products|async" [value]="product.id">
+            {{product.name}}
+          </option>
+        </select>
+
+      </div>
+
+    </div>
+    <div class="products">
+      <app-product-row *ngFor="let item of servizioService.products|async" [promo]="(promo_product_id==item.id)?true:false"
+        (onClick)="productSelected=$event"
+        [product]="item">
+      </app-product-row>
+    </div>
+
+
+
+  </ng-container>
+  <ng-template #detail>
+    <app-product-detail (onBack)="productSelected=undefined" [product]="productSelected"></app-product-detail>
+  </ng-template>
+
+</div>
